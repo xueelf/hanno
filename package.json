@@ -1,0 +1,47 @@
+{
+  "name": "hanno",
+  "version": "0.0.1",
+  "description": "Transpile the JSX to HTML strings",
+  "exports": {
+    "./jsx-runtime": {
+      "types": "./types/jsx.d.ts",
+      "import": "./lib/index.js",
+      "require": "./lib/index.js"
+    },
+    "./jsx-dev-runtime": {
+      "types": "./types/jsx.d.ts",
+      "import": "./lib/index.js",
+      "require": "./lib/index.js"
+    }
+  },
+  "packageManager": "bun@1.2.0",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "build": "bun ./scripts/build/index.ts",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xueelf/hanno.git"
+  },
+  "keywords": [
+    "html",
+    "jsx",
+    "react"
+  ],
+  "author": "Yuki <admin@yuki.sh>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xueelf/hanno/issues"
+  },
+  "homepage": "https://github.com/xueelf/hanno#readme",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "latest"
+  }
+}
