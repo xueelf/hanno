@@ -1,10 +1,8 @@
 import { build, type BuildConfig } from 'bun';
 
-const buildConfig: BuildConfig = {
+const config: BuildConfig = {
   entrypoints: ['src/index.ts'],
   outdir: 'lib',
 };
 
-await build({
-  ...buildConfig,
-});
+await build(config);
