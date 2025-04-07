@@ -91,25 +91,25 @@ npm install typescript hanno
 这就完了？没错，修改 `jsx` 与 `jsxImportSource` 后，你便可以直接使用 TSX 来编写你的页面代码了。
 
 ```tsx
-function Paragraph(props: { content: string }) {
+function Paragraph(props: { content: string }): string {
   return <div>{props.content}</div>;
 }
 
-const message = 'hello world';
-const app = document.getElementById('app');
+const message: string = 'hello world';
+const app: HTMLElement = document.getElementById('app')!;
 
 app.innerHTML = <Paragraph content={message} />;
 ```
 
 ## 名字
 
-「han no」 是日语「反応」的罗马音，其英语正是「react」，我便将其用做了该项目的名字。
+「hanno」 是日语「反応」的罗马音，其英语正是「react」，我便将其用做了该项目的名字。
 
 ## 关于
 
 最初，我是因为要在 [Docsify](https://docsify.js.org/) 中开发插件（这是一个可以将 Markdown 转换为 HTML 并渲染至页面的文档框架），便使用了模板字符串来处理页面元素，docsify 的大部分插件也都是这么做的。
 
-但随着时间的推移，我愈发觉得代码会逐渐变得不易维护和不可读，所以开始使用 [vhtml](https://github.com/developit/vhtml) 来重构插件。该项目也是 Preact 所推荐的，纯输出 HTML 字符串的解决方案。
+但随着时间的推移，我愈发觉得代码会逐渐变得不易维护和不可读，所以开始使用 [vhtml](https://github.com/developit/vhtml) 来重构插件，该项目也是 Preact 曾经推荐用于纯 HTML 字符串输出的解决方案。
 
 但是 vhtml 并没有完全解决我的使用需求，例如，我要为 class 传入数组亦或是对象，它并没有为其提供支持。其次是 vhtml 仅仅提供了 `h` 函数，如果想在 TypeScript 中使用，还需要额外的配置并自行定义 JSX 类型和编写 `Fragment` 函数，不能做到开箱即用。
 

@@ -91,25 +91,25 @@ Taking TypeScript as an example, after installing the relevant dependencies, we 
 Is that it? Yes, after modifying `jsx` and `jsxImportSource`, you can directly use TSX to write your page code.
 
 ```tsx
-function Paragraph(props: { content: string }) {
+function Paragraph(props: { content: string }): string {
   return <div>{props.content}</div>;
 }
 
-const message = 'hello world';
-const app = document.getElementById('app');
+const message: string = 'hello world';
+const app: HTMLElement = document.getElementById('app')!;
 
 app.innerHTML = <Paragraph content={message} />;
 ```
 
 ## Name
 
-"han no" is the romanization of the Japanese word "反応", which is exactly "react" in English, so I used it as name of the project.
+"hanno" is the romanization of the Japanese word "反応", which is exactly "react" in English, so I used it as name of the project.
 
 ## About
 
 Initially, I developed this because I needed to create a plugin for [Docsify](https://docsify.js.org/) (this is a documentation framework that converts Markdown into HTML and renders it on the page). At that time, I used template strings to handle page elements, as most docsify plugins do.
 
-However, as time went on, I felt that the code was becoming increasingly difficult to maintain and read, so I started using [vhtml](https://github.com/developit/vhtml) to refactor the plugin. This project is also recommended by Preact as a solution for purely outputting HTML strings.
+However, as time went on, I felt that the code was becoming increasingly difficult to maintain and read, so I started using [vhtml](https://github.com/developit/vhtml) to refactor the plugin, this project is also the solution by Preact once recommended for pure HTML string output.
 
 But vhtml didn't fully meet my needs. For example, I wanted to pass arrays or objects to the class, which it didn't support. Additionally, vhtml only provides the h function. If you want to use it with TypeScript, you need extra configuration, define JSX types yourself, and write a `Fragment` function, which is not out-of-the-box.
 
