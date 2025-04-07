@@ -13,7 +13,9 @@ test('attribute boolean', () => {
 });
 
 test('attribute class', () => {
-  expect(<div class="class">class string</div>).toBe('<div class="class">class string</div>');
+  expect(<div class="class">class string</div>).toBe(
+    '<div class="class">class string</div>',
+  );
 
   expect(<div class={['class1', 'class2']}>class array</div>).toBe(
     '<div class="class1 class2">class array</div>',
@@ -29,7 +31,7 @@ test('attribute style', () => {
     '<div style="color: red">style string</div>',
   );
 
-  expect(<div style={{ color: 'red', fontSize: '16px' }}>style object</div>).toBe(
-    '<div style="color: red; font-size: 16px">style object</div>',
-  );
+  expect(
+    <div style={{ color: 'red', fontSize: '16px' }}>style object</div>,
+  ).toBe('<div style="color: red; font-size: 16px">style object</div>');
 });

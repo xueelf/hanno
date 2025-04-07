@@ -6,7 +6,9 @@ export interface DangerouslySetInnerHTML {
   __html: string;
 }
 
-export type TagProps<T extends HTMLElement> = Partial<Omit<T, 'children' | 'class' | 'style'>> & {
+export type TagProps<T extends HTMLElement> = Partial<
+  Omit<T, 'children' | 'class' | 'style'>
+> & {
   children?: unknown;
   class?: AttrClass;
   style?: AttrStyle;

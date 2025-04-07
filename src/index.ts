@@ -56,7 +56,9 @@ function parseAttribute(name: string, value: unknown): string {
 }
 
 function Fragment(props: Props): unknown {
-  return Array.isArray(props.children) ? props.children.join('') : props.children;
+  return Array.isArray(props.children)
+    ? props.children.join('')
+    : props.children;
 }
 
 function h(type: Type, props: Props): string {
@@ -72,9 +74,12 @@ function h(type: Type, props: Props): string {
   if (is_void) {
     return attributes ? `<${type} ${attributes} />` : `<${type} />`;
   }
-  const openingTag: string = attributes ? `<${type} ${attributes}>` : `<${type}>`;
+  const openingTag: string = attributes
+    ? `<${type} ${attributes}>`
+    : `<${type}>`;
   const closingTag: string = `</${type}>`;
-  const textContent: string = dangerouslySetInnerHTML?.__html ?? serialize(children);
+  const textContent: string =
+    dangerouslySetInnerHTML?.__html ?? serialize(children);
 
   return `${openingTag}${textContent}${closingTag}`;
 }

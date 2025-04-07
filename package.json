@@ -21,7 +21,9 @@
   ],
   "scripts": {
     "build": "bun ./scripts/build/index.ts",
-    "test": "bun test"
+    "format": "prettier . --write --cache",
+    "test": "bun test",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -39,7 +41,11 @@
   },
   "homepage": "https://github.com/xueelf/hanno#readme",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@types/bun": "latest",
+    "husky": "latest",
+    "prettier": "latest"
   },
   "peerDependencies": {
     "typescript": "latest"
